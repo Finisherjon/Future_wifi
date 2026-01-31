@@ -123,7 +123,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       themeMode: ThemeMode.dark,
-      home: BottomBar(),
+      home: IntroPageScreen(),
     );
   }
 }
