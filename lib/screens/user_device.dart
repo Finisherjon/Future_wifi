@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:future_wifi_code/screens/traffic_history_screen.dart';
 
 import '../adjust_size.dart';
 import 'account_settings_screen.dart';
@@ -102,20 +103,60 @@ class _UserDeviceState extends State<UserDevice> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "User's Device",
-                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                    // color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
+                ///
+                ///
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "User's Device",
+                      style: Theme.of(context).textTheme.headlineSmall!
+                          .copyWith(fontWeight: FontWeight.bold),
+                    ),
+                    ElevatedButton.icon(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder:
+                                (_) => TrafficHistoryScreen(
+                                  hostname: "Device",
+                                  ip: "192.168.1.x",
+                                  mac: "00:00:00:00:00:00",
+                                ),
+                          ),
+                        );
+                      },
+                      icon: Icon(Icons.bar_chart, color: Colors.black),
+                      label: Text(
+                        "View History",
+                        style: TextStyle(color: Colors.black),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.lightGreenAccent,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
+
+                ///
+                ///
+                // Text(
+                //   "User's Device",
+                //   style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                //     // color: Colors.white,
+                //     fontWeight: FontWeight.bold,
+                //   ),
+                // ),
                 SizedBox(height: Sizes.heights(context) * 0.02),
                 _deviceStats(context),
                 SizedBox(height: Sizes.heights(context) * 0.02),
                 Text(
                   "Limits & Restriction",
                   style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                    // color: Colors.white,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

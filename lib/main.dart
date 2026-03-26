@@ -88,6 +88,7 @@
 import 'package:flutter/material.dart';
 import 'package:future_wifi_code/screens/intro_page_screen.dart';
 import 'package:future_wifi_code/screens/login_screen.dart';
+import 'package:future_wifi_code/screens/user_device.dart';
 import 'bottom_bar.dart';
 
 void main() {
